@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPainter>
-#include <QDebug>
 #include <QTimer>
 #include <QMouseEvent>
 
@@ -70,7 +69,6 @@ void MainWindow::mousePressEvent(QMouseEvent *event)
     if(event->button()==Qt::LeftButton)
     {
         QPoint point=event->pos()-ui->label->pos();
-        //offset=event->pos()-ui->label->pos();
         if(point.x()>=0 and point.x()<=map.getwidth()*map.getwidthnum() and point.y()>=0 and point.y()<=map.getheight()*map.getheightnum())//防止超出map范围
         {
             lastcellx=point.x()/map.getwidth();
@@ -112,7 +110,6 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
     if(event->buttons() & Qt::LeftButton)
     {
         QPoint point=event->pos()-ui->label->pos();
-        //offset=event->pos()-ui->label->pos();
         if(point.x()>=0 and point.x()<=map.getwidth()*map.getwidthnum() and point.y()>=0 and point.y()<=map.getheight()*map.getheightnum())//防止超出map范围
         {
             if(lastcellx!=point.x()/map.getwidth() or lastcelly!=point.y()/map.getheight())

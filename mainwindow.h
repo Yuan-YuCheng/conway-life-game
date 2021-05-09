@@ -17,7 +17,6 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    //QPoint offset;//存储鼠标与label位置差值
     int lastcellx=-1,lastcelly=-1;//存储鼠标移动事件中上一个细胞位置
     int startcellx=-1,startcelly=-1;//存储即将改变的矩形起点
     bool startcell=false;
@@ -40,8 +39,8 @@ class map
 private:
     int map[1000][1000];//存活状态 1为存活
     int neighbor[1000][1000];//邻居细胞个数
-    int width=15; //细胞大小
-    int height=15;
+    int width=15; //细胞宽
+    int height=15;//细胞高
     int widthnum=60; //细胞个数
     int heightnum=40;
 
